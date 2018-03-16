@@ -1,0 +1,9 @@
+{
+    "version": "4.7.0",
+    "watched": [
+        {
+            "path": "/Users/carlanros/react/ReactNativeTypeScript",
+            "triggers": []
+        }
+    ]
+}

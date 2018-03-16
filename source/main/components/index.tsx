@@ -11,11 +11,11 @@ const styles = StyleSheet.create({
 });
 
 export class Main extends React.Component<types.IProps, {}> {
-  componentDidMount() {
-    if (!this.props.login.isLoggedIn) {
-      Actions.push('login');
-    }
-  }
+  // componentDidMount() {
+   // if (!this.props.login.isLoggedIn) {
+    //  Actions.push('login');
+  //  }
+ //  }
 
   render() {
     return (

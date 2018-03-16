@@ -16,6 +16,7 @@ import * as types from '../../Types';
 import Theme, { Colors, TabIconSize } from '../../styles';
 import Main from '../../main/components';
 import Login from '../../login/components';
+import  Media  from '../../media/components';
 
 interface RouterProps {
   sceneStyle?: any;
@@ -60,13 +61,13 @@ export const Routes = Actions.create(
           component={Main}
         />
         <Scene
-          key='main2'
+          key='media'
           icon={mainIcon}
           hideNavBar
           tintColor={Colors.CrossYellow}
-          tabBarLabel='Login 2'
+          tabBarLabel='Media'
           back={false}
-          component={Login}
+          component={Media}
         />
       </Tabs>
       <Scene key='login' component={Login} hideNavBar back={false} />
