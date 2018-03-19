@@ -5,6 +5,11 @@ import { ImagePicker } from 'expo';
 import { Actions } from 'react-native-router-flux';
 import { connect, Dispatch } from 'react-redux';
 import * as types from '../../Types';
+import { TakePhoto } from '../actions';
+import  MediaReducer from '../reducer';
+import { bindActionCreators } from 'redux';
+import { MediaTypes } from '..';
+
 interface IState { image: string; }
 export  class Media extends React.Component<types.IProps, IState> {
 
@@ -51,6 +56,8 @@ const mapStateToProps = (state: types.IApplicationState) => ({
 
   const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({
     dispatch,
+    TakePhoto: bindActionCreators(TakePhoto, dispatch),
+
   });
 
   export default connect<types.IApplicationState, types.IProps>(

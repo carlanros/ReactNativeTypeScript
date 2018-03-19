@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
   padding: { padding: 20 },
 });
 
-
 export class Main extends React.Component<types.IProps, {}> {
   // componentDidMount() {
    // if (!this.props.login.isLoggedIn) {
@@ -34,6 +33,7 @@ const mapStateToProps = (state: types.IApplicationState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({
   dispatch,
+
 });
 
 export default connect<types.IApplicationState, types.IProps>(

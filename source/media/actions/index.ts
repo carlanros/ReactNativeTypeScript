@@ -23,7 +23,7 @@ interface ImageInfo {
  * @public
  * @global
  */
-export const FacebookLogin = () => async (
+export const TakePhoto = () => async (
   dispatch: Redux.Dispatch<mediaTypes.IMediaAction>
 ) => {
   dispatch(
@@ -51,7 +51,7 @@ export const FacebookLogin = () => async (
         cancelled: false,
         uri : result.uri,
         width: result.width,
-        heigth: result.height,
+        height: result.height,
       };
 
       // Success

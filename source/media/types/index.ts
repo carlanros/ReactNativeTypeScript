@@ -24,7 +24,7 @@ export enum MediaConstants {
 
 export interface IMediaState {
   cancelled: boolean;
-  heigth: number;
+  height: number;
   width: number;
   uri: string;
 
