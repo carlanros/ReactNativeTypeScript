@@ -52,6 +52,7 @@ const mapStateToProps = (state: types.IApplicationState) => ({
   route: state.route,
   login: state.login,
   utility: state.utility,
+
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({

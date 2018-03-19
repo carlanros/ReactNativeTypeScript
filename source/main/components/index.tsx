@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   padding: { padding: 20 },
 });
 
+
 export class Main extends React.Component<types.IProps, {}> {
   // componentDidMount() {
    // if (!this.props.login.isLoggedIn) {

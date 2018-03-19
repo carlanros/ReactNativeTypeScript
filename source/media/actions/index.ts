@@ -1,13 +1,20 @@
 // media/actions/intex.ts
 import * as Redux from 'redux';
-import axios from 'axios';
-import { Constants, Facebook } from 'expo';
+import { ImagePicker } from 'expo';
 import * as mediaTypes from '../types/';
 import { AppErrorChanged, AppLoadingChanged } from '../../utility/';
-import { StorageTypes, SaveByKey } from '../../storage';
-// import { MediaConstants } from '../types/index';
+
+// import { MediaConstants, IMediaAction, IMediaState } from '../types/index';
+// import { Image } from 'react-native';
 
 const takePhoto = 'TakePhoto';
+
+interface ImageInfo {
+  uri: string;
+  width: number;
+  height: number;
+  cancelled: boolean;
+}
 /**
  * Login to Facebook and store user to AsyncStorage
  * @function FacebookLogin
@@ -28,18 +35,32 @@ export const FacebookLogin = () => async (
   );
 
   try {
-// Expo bild:
+// Expo bild
+
+  let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [4, 3],
+  }) as ImageInfo;
+
+  console.log(result);
+
+  if (!result.cancelled) {
 
       let actionResult: mediaTypes.IMediaAction = {
-          type: mediaTypes.MediaConstants.MEDIA_SUCCESS,
-
+        type: mediaTypes.MediaConstants.MEDIA_SUCCESS,
+        cancelled: false,
+        uri : result.uri,
+        width: result.width,
+        heigth: result.height,
       };
 
-      if (!actionResult.cancelled) {
+      // Success
       dispatch(actionResult);
+
          // Reset errors
    dispatch(
        AppErrorChanged({ hasError: false, sender: takePhoto }));
+
     } else {
 
     dispatch(
