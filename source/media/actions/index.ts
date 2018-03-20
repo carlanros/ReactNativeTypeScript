@@ -35,21 +35,20 @@ export const TakePhoto = () => async (
   );
 
   try {
-// Expo bild
+    // Expo bild
 
-  let result = await ImagePicker.launchImageLibraryAsync({
+    let result = (await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true,
       aspect: [4, 3],
-  }) as ImageInfo;
+    })) as ImageInfo;
 
-  console.log(result);
+    console.log(result);
 
-  if (!result.cancelled) {
-
+    if (!result.cancelled) {
       let actionResult: mediaTypes.IMediaAction = {
         type: mediaTypes.MediaConstants.MEDIA_SUCCESS,
         cancelled: false,
-        uri : result.uri,
+        uri: result.uri,
         width: result.width,
         height: result.height,
       };
@@ -57,13 +56,10 @@ export const TakePhoto = () => async (
       // Success
       dispatch(actionResult);
 
-         // Reset errors
-   dispatch(
-       AppErrorChanged({ hasError: false, sender: takePhoto }));
-
+      // Reset errors
+      dispatch(AppErrorChanged({ hasError: false, sender: takePhoto }));
     } else {
-
-    dispatch(
+      dispatch(
         AppErrorChanged({
           hasError: true,
           reason: 'Photo was cancelled',
@@ -72,7 +68,7 @@ export const TakePhoto = () => async (
         })
       );
     }
-     } catch (error) {
+  } catch (error) {
     dispatch(
       AppErrorChanged({
         hasError: true,
@@ -83,6 +79,6 @@ export const TakePhoto = () => async (
     );
   } finally {
     dispatch(AppLoadingChanged({ isBusy: false, sender: takePhoto }));
-
   }
 };
+export type TakePhoto = typeof TakePhoto;

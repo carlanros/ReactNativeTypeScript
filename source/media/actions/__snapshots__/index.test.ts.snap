@@ -1,26 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Facebook actions FacebookLogin returns Success when done 1`] = `
-Array [
-  Object {
-    "reason": "Kollar vem du är",
-    "sender": "TakePhoto",
-    "type": "APP = BUSY LOADING",
-  },
-  Object {
-    "exception": [TypeError: Cannot read property 'launchImageLibraryAsync' of undefined],
-    "reason": "MEDIA_FAILED",
-    "sender": "TakePhoto",
-    "type": "APP = HAS ERROR",
-  },
-  Object {
-    "reason": null,
-    "sender": "TakePhoto",
-    "type": "APP = DONE LOADING",
-  },
-]
-`;
-
 exports[`Media actions TakePhoto returns Success when done 1`] = `
 Array [
   Object {
@@ -29,10 +8,17 @@ Array [
     "type": "APP = BUSY LOADING",
   },
   Object {
-    "exception": [TypeError: Cannot read property 'launchImageLibraryAsync' of undefined],
-    "reason": "MEDIA_FAILED",
+    "cancelled": false,
+    "height": 1,
+    "type": "MEDIA_SUCCESS",
+    "uri": "test",
+    "width": 1,
+  },
+  Object {
+    "exception": null,
+    "reason": null,
     "sender": "TakePhoto",
-    "type": "APP = HAS ERROR",
+    "type": "APP NO ERROR",
   },
   Object {
     "reason": null,

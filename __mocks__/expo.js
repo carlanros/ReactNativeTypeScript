@@ -22,6 +22,16 @@ const fbMock = {
 // Mock the expo library
 module.exports =
   {
+    ImagePicker:{
+      launchImageLibraryAsync: (options) =>
+      new Promise(
+        resolve => resolve(options ? {
+            uri: 'test',
+            width: 1,
+            height: 1,
+            cancelled: false,
+        } :null))
+    },
     PositionMock: positionMock,
     GoogleMock: googleMock,
     Location: {
