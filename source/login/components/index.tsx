@@ -6,7 +6,7 @@ import { SocialIcon } from 'react-native-elements';
 
 import * as types from '../../Types';
 import { StorageTypes, GetByKey } from '../../storage';
-import { FacebookLogin, GoogleLogin } from '..';
+import { FacebookLogin, GoogleLogin } from '../actions';
 import { ComponentBase } from '../../utility';
 
 interface IState {}
