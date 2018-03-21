@@ -1,8 +1,8 @@
 import { NavigatorTypes } from './navigator/';
 import { LoginTypes } from './login/';
 import { UtilityTypes } from './utility/';
-import { StorageTypes } from './storage';
 import { MediaTypes, TakePhoto } from './media';
+import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
 
 /**
  * The global application state as contained in Redux
@@ -35,4 +35,8 @@ export interface IProps extends IApplicationState {
   AppErrorChanged?: UtilityTypes.IAppErrorChanged;
   AppLoadingChanged?: UtilityTypes.IAppLoadingChanged;
   TakePhoto?: TakePhoto;
+  GoogleLogin?: LoginTypes.GoogleLogin;
+  GetByKey?: GetByKey;
+  RemoveKey?: RemoveKey;
+  SaveByKey?: SaveByKey;
 }
